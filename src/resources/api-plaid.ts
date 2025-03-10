@@ -1,0 +1,75 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { APIResource } from '../resource';
+import { APIPromise } from '../api-promise';
+import { RequestOptions } from '../internal/request-options';
+
+export class APIPlaid extends APIResource {
+  /**
+   * Auth Link (Plaid)
+   */
+  createLink(
+    body: APIPlaidCreateLinkParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<APIPlaidCreateLinkResponse> {
+    return this._client.post('/v1/api.plaid/link', { body, ...options });
+  }
+
+  /**
+   * Exchange token (Plaid)
+   */
+  exchangeToken(
+    body: APIPlaidExchangeTokenParams,
+    options?: RequestOptions,
+  ): APIPromise<APIPlaidExchangeTokenResponse> {
+    return this._client.post('/v1/api.plaid/exchange', { body, ...options });
+  }
+}
+
+export interface APIPlaidCreateLinkResponse {
+  data: APIPlaidCreateLinkResponse.Data;
+}
+
+export namespace APIPlaidCreateLinkResponse {
+  export interface Data {
+    expiration: string;
+
+    link_token: string;
+  }
+}
+
+export interface APIPlaidExchangeTokenResponse {
+  data: APIPlaidExchangeTokenResponse.Data;
+}
+
+export namespace APIPlaidExchangeTokenResponse {
+  export interface Data {
+    access_token: string;
+
+    item_id: string;
+  }
+}
+
+export interface APIPlaidCreateLinkParams {
+  /**
+   * Used when initiating the reconnect flow
+   */
+  accessToken?: string;
+
+  language?: string;
+
+  userId?: string;
+}
+
+export interface APIPlaidExchangeTokenParams {
+  token: string;
+}
+
+export declare namespace APIPlaid {
+  export {
+    type APIPlaidCreateLinkResponse as APIPlaidCreateLinkResponse,
+    type APIPlaidExchangeTokenResponse as APIPlaidExchangeTokenResponse,
+    type APIPlaidCreateLinkParams as APIPlaidCreateLinkParams,
+    type APIPlaidExchangeTokenParams as APIPlaidExchangeTokenParams,
+  };
+}
