@@ -1,0 +1,32 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { APIResource } from '../resource';
+import { APIPromise } from '../api-promise';
+import { RequestOptions } from '../internal/request-options';
+
+export class APIRates extends APIResource {
+  /**
+   * List all financial rates
+   */
+  list(options?: RequestOptions): APIPromise<APIRateListResponse> {
+    return this._client.get('/v1/api.rates', options);
+  }
+}
+
+export interface APIRateListResponse {
+  data: Array<APIRateListResponse.Data>;
+}
+
+export namespace APIRateListResponse {
+  export interface Data {
+    date: string;
+
+    rates: Record<string, number>;
+
+    source: string;
+  }
+}
+
+export declare namespace APIRates {
+  export { type APIRateListResponse as APIRateListResponse };
+}
