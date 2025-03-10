@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^workspace-financial-backend-sdk$': '<rootDir>/src/index.ts',
-    '^workspace-financial-backend-sdk/(.*)$': '<rootDir>/src/$1',
+    '^@solomon-ai/workspace-financial-backend-sdk$': '<rootDir>/src/index.ts',
+    '^@solomon-ai/workspace-financial-backend-sdk/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

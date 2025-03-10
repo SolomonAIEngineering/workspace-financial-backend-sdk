@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "workspace-financial-backend-sdk/*": ["src/*"],
-      "workspace-financial-backend-sdk": ["src/index.ts"]
+      "@solomon-ai/workspace-financial-backend-sdk/*": ["src/*"],
+      "@solomon-ai/workspace-financial-backend-sdk": ["src/index.ts"]
     },
     "noEmit": true,
 
