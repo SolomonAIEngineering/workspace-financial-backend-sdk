@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { WorkspaceFinancialBackendSDK } from 'workspace-financial-backend-sdk';
+import { WorkspaceFinancialBackendSDK } from '@solomon-ai/workspace-financial-backend-sdk';
 
 const { stringifyQuery } = WorkspaceFinancialBackendSDK.prototype as any;
 

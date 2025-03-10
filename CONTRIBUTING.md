@@ -55,12 +55,12 @@ $ cd workspace-financial-backend-sdk
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link workspace-financial-backend-sdk
+$ yarn link @solomon-ai/workspace-financial-backend-sdk
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global workspace-financial-backend-sdk
+$ pnpm link -—global @solomon-ai/workspace-financial-backend-sdk
 ```
 
 ## Running tests

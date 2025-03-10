@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^workspace-financial-backend-sdk(/.*)?',
+              regex: '^@solomon-ai/workspace-financial-backend-sdk(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],
