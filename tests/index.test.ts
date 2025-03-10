@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'workspace-financial-backend-sdk/api-promise';
+import { APIPromise } from '@solomon-ai/workspace-financial-backend-sdk/api-promise';
 
 import util from 'node:util';
-import WorkspaceFinancialBackendSDK from 'workspace-financial-backend-sdk';
-import { APIUserAbortError } from 'workspace-financial-backend-sdk';
+import WorkspaceFinancialBackendSDK from '@solomon-ai/workspace-financial-backend-sdk';
+import { APIUserAbortError } from '@solomon-ai/workspace-financial-backend-sdk';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

@@ -1,4 +1,7 @@
-import { createPathTagFunction, encodeURIPath } from 'workspace-financial-backend-sdk/internal/utils/path';
+import {
+  createPathTagFunction,
+  encodeURIPath,
+} from '@solomon-ai/workspace-financial-backend-sdk/internal/utils/path';
 import { inspect } from 'node:util';
 
 describe('path template tag function', () => {
