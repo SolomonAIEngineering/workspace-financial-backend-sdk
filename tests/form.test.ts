@@ -1,5 +1,8 @@
-import { multipartFormRequestOptions, createForm } from 'workspace-financial-backend-sdk/internal/uploads';
-import { toFile } from 'workspace-financial-backend-sdk/uploads';
+import {
+  multipartFormRequestOptions,
+  createForm,
+} from '@solomon-ai/workspace-financial-backend-sdk/internal/uploads';
+import { toFile } from '@solomon-ai/workspace-financial-backend-sdk/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

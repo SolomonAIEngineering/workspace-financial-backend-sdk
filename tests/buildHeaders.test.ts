@@ -3,7 +3,7 @@ import {
   buildHeaders,
   type HeadersLike,
   type NullableHeaders,
-} from 'workspace-financial-backend-sdk/internal/headers';
+} from '@solomon-ai/workspace-financial-backend-sdk/internal/headers';
 
 function inspectNullableHeaders(headers: NullableHeaders) {
   return `NullableHeaders {${[
