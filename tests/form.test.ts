@@ -2,7 +2,7 @@ import {
   multipartFormRequestOptions,
   createForm,
 } from '@solomon-ai/workspace-financial-backend-sdk/internal/uploads';
-import { toFile } from '@solomon-ai/workspace-financial-backend-sdk/uploads';
+import { toFile } from '@solomon-ai/workspace-financial-backend-sdk/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
