@@ -1,2 +1,4 @@
 configured_endpoints: 22
 openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/solomon-ai-yoanyombapro1234%2Fworkspace-financial-backend-sdk-1331388b1e68f0116ee3e777dfb01c316b0d922c91b8ad1c30489f0d85e4743d.yml
+openapi_spec_hash: a1c2f7c5adbbc6497012741157ba5cfc
+config_hash: af10be0af89dc76c62ef05c460d0ccd7
