@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { WorkspaceFinancialBackendSDKError } from '../../error';
+import { WorkspaceFinancialBackendSDKError } from '../../core/error';
 
 // https://url.spec.whatwg.org/#url-scheme-string
 const startsWithSchemeRegexp = /^[a-z][a-z0-9+.-]*:/i;
@@ -97,4 +97,12 @@ export const maybeCoerceBoolean = (value: unknown): boolean | undefined => {
     return undefined;
   }
   return coerceBoolean(value);
+};
+
+export const safeJSON = (text: string) => {
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    return undefined;
+  }
 };
