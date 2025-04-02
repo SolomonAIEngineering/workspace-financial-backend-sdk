@@ -28,9 +28,9 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 async function main() {
-  const apiFinancialAccount = await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' });
+  const apiFinancialAccounts = await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' });
 
-  console.log(apiFinancialAccount.data);
+  console.log(apiFinancialAccounts.data);
 }
 
 main();
@@ -51,7 +51,7 @@ const client = new WorkspaceFinancialBackendSDK({
 
 async function main() {
   const params: WorkspaceFinancialBackendSDK.APIFinancialAccountListParams = { provider: 'REPLACE_ME' };
-  const apiFinancialAccount: WorkspaceFinancialBackendSDK.APIFinancialAccountListResponse =
+  const apiFinancialAccounts: WorkspaceFinancialBackendSDK.APIFinancialAccountListResponse =
     await client.apiFinancialAccounts.list(params);
 }
 
@@ -69,7 +69,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const apiFinancialAccount = await client.apiFinancialAccounts
+  const apiFinancialAccounts = await client.apiFinancialAccounts
     .list({ provider: 'REPLACE_ME' })
     .catch(async (err) => {
       if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
@@ -158,11 +158,11 @@ const response = await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME'
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: apiFinancialAccount, response: raw } = await client.apiFinancialAccounts
+const { data: apiFinancialAccounts, response: raw } = await client.apiFinancialAccounts
   .list({ provider: 'REPLACE_ME' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(apiFinancialAccount.data);
+console.log(apiFinancialAccounts.data);
 ```
 
 ### Logging
