@@ -264,11 +264,11 @@ export class WorkspaceFinancialBackendSDK {
     );
   }
 
-  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
+  protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
     if (this.bearerToken == null) {
       return undefined;
     }
-    return new Headers({ Authorization: `Bearer ${this.bearerToken}` });
+    return buildHeaders([{ Authorization: `Bearer ${this.bearerToken}` }]);
   }
 
   /**
