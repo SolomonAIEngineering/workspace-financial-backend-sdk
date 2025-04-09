@@ -10,7 +10,7 @@ const client = new WorkspaceFinancialBackendSDK({
 describe('resource apiTransactions', () => {
   // skipped: tests are disabled for the time being
   test.skip('list: only required params', async () => {
-    const responsePromise = client.apiTransactions.list({ accountId: 'acct_1234567890', provider: 'teller' });
+    const responsePromise = client.apiTransactions.list({ accountId: 'acct_1234567890', provider: 'stripe' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -24,9 +24,9 @@ describe('resource apiTransactions', () => {
   test.skip('list: required and optional params', async () => {
     const response = await client.apiTransactions.list({
       accountId: 'acct_1234567890',
-      provider: 'teller',
+      provider: 'stripe',
       accessToken: 'token-123',
-      accountType: 'credit',
+      accountType: 'depository',
       latest: 'true',
       syncCursor: 'cursor-123',
     });
