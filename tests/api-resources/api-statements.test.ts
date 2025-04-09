@@ -13,7 +13,7 @@ describe('resource apiStatements', () => {
     const response = await client.apiStatements.retrievePdf({
       accessToken: 'access-sandbox-123456-abcdef',
       accountId: '5f7a7464d6e268055f17e3a5',
-      provider: 'teller',
+      provider: 'plaid',
       statementId: 'abcdef123456',
       teamId: 'team_67890',
       userId: 'user_12345',
