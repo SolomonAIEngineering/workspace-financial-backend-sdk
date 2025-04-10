@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-04-10)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#21](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/issues/21)) ([eb6def4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/eb6def49b37177291071de8c85cc3550096f4672))
+* **client:** send `X-Stainless-Timeout` in seconds ([#19](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/issues/19)) ([e32d69a](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/e32d69ab1056437671466c0d19c583287220fa7d))
+* **client:** send all configured auth headers ([#23](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/issues/23)) ([cd13acc](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/cd13acc20481c4b04f9de3302b483687958e111f))
+* **mcp:** remove unused tools.ts ([#22](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/issues/22)) ([0bbc02c](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/0bbc02c8588d96a4ca5d119cbb8815055f7fc122))
+* pluralize `list` response variables ([#17](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/issues/17)) ([b8bebee](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/b8bebeed32f2c7ef983e4f7834793ef63780230d))
+
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#20](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/issues/20)) ([399cb7a](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/399cb7aa5f7cbd4023c9914008de8cc1f658994b))
+* **internal:** improve node 18 shims ([3a222e1](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/3a222e108299c87a83e8fb80c5633058f67e91eb))
+* **internal:** reduce CI branch coverage ([69c9c77](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/69c9c77d120a23bd5d121018b8dcf49397f26060))
+* **internal:** upload builds and expand CI branch coverage ([36ac9b8](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/36ac9b82dc87959711862fea7f68521ae318b394))
+* **tests:** improve enum examples ([#24](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/issues/24)) ([a0a3959](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/a0a39591000b49aec749d84cb9148371f372f001))
+
 ## 0.1.0-alpha.1 (2025-03-27)
 
 Full Changelog: [v0.0.1-alpha.2...v0.1.0-alpha.1](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.0.1-alpha.2...v0.1.0-alpha.1)
