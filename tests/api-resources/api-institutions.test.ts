@@ -10,7 +10,7 @@ const client = new WorkspaceFinancialBackendSDK({
 describe('resource apiInstitutions', () => {
   // skipped: tests are disabled for the time being
   test.skip('list: only required params', async () => {
-    const responsePromise = client.apiInstitutions.list({ countryCode: 'AT' });
+    const responsePromise = client.apiInstitutions.list({ countryCode: 'BE' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,7 @@ describe('resource apiInstitutions', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('list: required and optional params', async () => {
-    const response = await client.apiInstitutions.list({ countryCode: 'AT', limit: '50', q: 'Swedbank' });
+    const response = await client.apiInstitutions.list({ countryCode: 'BE', limit: '50', q: 'Swedbank' });
   });
 
   // skipped: tests are disabled for the time being
