@@ -285,7 +285,7 @@ export interface APITransactionListParams {
    */
   accountId: string;
 
-  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe';
+  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   /**
    * Used for Teller and Plaid

@@ -28,7 +28,7 @@ export interface Institution {
 
   name: string;
 
-  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe';
+  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   available_history?: number | null;
 }
