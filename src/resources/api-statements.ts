@@ -30,7 +30,7 @@ export interface APIStatementRetrievePdfParams {
    */
   accountId: string;
 
-  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe';
+  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   /**
    * Statement ID
