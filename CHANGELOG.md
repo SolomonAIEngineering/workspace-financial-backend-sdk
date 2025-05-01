@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-05-01)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* **api:** api update ([fea1cfa](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/fea1cfa38652b6bf5eaaa01cb1df47825939758d))
+
+
+### Bug Fixes
+
+* **internal:** fix file uploads in node 18 jest ([97d21bd](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/97d21bd27690c8c24e1b6f12bdf1df682fbb496d))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([6d678e3](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/6d678e3174c248a806b5351cf20c7edc6105abd2))
+* **ci:** only use depot for staging repos ([f71634c](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/f71634c46f23d473c4a78254d6e9ba86e7f9b820))
+* **client:** minor internal fixes ([7aba983](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/7aba9833e849d681bfee1f66f9f1b97592c4c18e))
+* **internal:** codegen related update ([d461b5e](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/d461b5ecd0879759b46f89683d18bfbcab6d3d7c))
+* **internal:** refactor utils ([25f02bd](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/25f02bd9c356bdd9fd5fbc2a8725a81e4f0a7a95))
+* **perf:** faster base64 decoding ([4f46883](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/4f468830ad8a12f439d827b2a427fd643281d590))
+
+
+### Documentation
+
+* **readme:** fix typo ([b134dc2](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/b134dc27ca3c736221dc2f71ff46f1edc78785cd))
+
 ## 0.1.0-alpha.2 (2025-04-10)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
