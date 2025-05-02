@@ -90,7 +90,7 @@ export namespace APIFinancialAccountListBalancesResponse {
 }
 
 export interface APIFinancialAccountListParams {
-  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe';
+  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   /**
    * GoCardLess reference id
@@ -114,7 +114,7 @@ export interface APIFinancialAccountDeleteParams {
    */
   accountId: string;
 
-  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe';
+  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   /**
    * Teller & Plaid access token
@@ -128,7 +128,7 @@ export interface APIFinancialAccountListBalancesParams {
    */
   id: string;
 
-  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe';
+  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   /**
    * Teller & Plaid access token
