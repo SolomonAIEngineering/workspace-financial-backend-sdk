@@ -7,6 +7,11 @@ import { RequestOptions } from '../internal/request-options';
 export class APIPlaid extends APIResource {
   /**
    * Auth Link (Plaid)
+   *
+   * @example
+   * ```ts
+   * const response = await client.apiPlaid.createLink();
+   * ```
    */
   createLink(
     body: APIPlaidCreateLinkParams | null | undefined = {},
@@ -17,6 +22,13 @@ export class APIPlaid extends APIResource {
 
   /**
    * Exchange token (Plaid)
+   *
+   * @example
+   * ```ts
+   * const response = await client.apiPlaid.exchangeToken({
+   *   token: 'ojwmef9823f892n9h98h2efoqed9823hdodfcoj13er92hef',
+   * });
+   * ```
    */
   exchangeToken(
     body: APIPlaidExchangeTokenParams,

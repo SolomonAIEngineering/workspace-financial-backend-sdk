@@ -8,6 +8,15 @@ import { path } from '../internal/utils/path';
 export class APIApikeys extends APIResource {
   /**
    * Create a new API key
+   *
+   * @example
+   * ```ts
+   * const apiKey = await client.apiApikeys.create({
+   *   expiresAt: '2025-01-01T00:00:00Z',
+   *   name: 'name',
+   *   userId: 0,
+   * });
+   * ```
    */
   create(body: APIApikeyCreateParams, options?: RequestOptions): APIPromise<APIKey> {
     return this._client.post('/v1/api.apikeys', { body, ...options });
@@ -15,6 +24,13 @@ export class APIApikeys extends APIResource {
 
   /**
    * List all API keys
+   *
+   * @example
+   * ```ts
+   * const apiApikeys = await client.apiApikeys.list({
+   *   userId: '1',
+   * });
+   * ```
    */
   list(query: APIApikeyListParams, options?: RequestOptions): APIPromise<APIApikeyListResponse> {
     return this._client.get('/v1/api.apikeys', { query, ...options });
@@ -22,6 +38,13 @@ export class APIApikeys extends APIResource {
 
   /**
    * Revoke an API key
+   *
+   * @example
+   * ```ts
+   * const response = await client.apiApikeys.revoke('id', {
+   *   query_id: '1',
+   * });
+   * ```
    */
   revoke(
     pathID: string,
