@@ -28,7 +28,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 async function main() {
-  const apiFinancialAccounts = await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' });
+  const apiFinancialAccounts = await client.apiFinancialAccounts.list({ provider: 'teller' });
 
   console.log(apiFinancialAccounts.data);
 }
@@ -50,7 +50,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 async function main() {
-  const params: WorkspaceFinancialBackendSDK.APIFinancialAccountListParams = { provider: 'REPLACE_ME' };
+  const params: WorkspaceFinancialBackendSDK.APIFinancialAccountListParams = { provider: 'teller' };
   const apiFinancialAccounts: WorkspaceFinancialBackendSDK.APIFinancialAccountListResponse =
     await client.apiFinancialAccounts.list(params);
 }
@@ -70,7 +70,7 @@ a subclass of `APIError` will be thrown:
 ```ts
 async function main() {
   const apiFinancialAccounts = await client.apiFinancialAccounts
-    .list({ provider: 'REPLACE_ME' })
+    .list({ provider: 'teller' })
     .catch(async (err) => {
       if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
         console.log(err.status); // 400
@@ -114,7 +114,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 // Or, configure per-request:
-await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' }, {
+await client.apiFinancialAccounts.list({ provider: 'teller' }, {
   maxRetries: 5,
 });
 ```
@@ -131,7 +131,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 // Override per-request:
-await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' }, {
+await client.apiFinancialAccounts.list({ provider: 'teller' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -154,12 +154,12 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new WorkspaceFinancialBackendSDK();
 
-const response = await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' }).asResponse();
+const response = await client.apiFinancialAccounts.list({ provider: 'teller' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: apiFinancialAccounts, response: raw } = await client.apiFinancialAccounts
-  .list({ provider: 'REPLACE_ME' })
+  .list({ provider: 'teller' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(apiFinancialAccounts.data);
