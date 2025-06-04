@@ -27,13 +27,9 @@ const client = new WorkspaceFinancialBackendSDK({
   environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
 });
 
-async function main() {
-  const apiFinancialAccounts = await client.apiFinancialAccounts.list({ provider: 'teller' });
+const apiFinancialAccounts = await client.apiFinancialAccounts.list({ provider: 'teller' });
 
-  console.log(apiFinancialAccounts.data);
-}
-
-main();
+console.log(apiFinancialAccounts.data);
 ```
 
 ### Request & Response types
@@ -49,13 +45,9 @@ const client = new WorkspaceFinancialBackendSDK({
   environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
 });
 
-async function main() {
-  const params: WorkspaceFinancialBackendSDK.APIFinancialAccountListParams = { provider: 'teller' };
-  const apiFinancialAccounts: WorkspaceFinancialBackendSDK.APIFinancialAccountListResponse =
-    await client.apiFinancialAccounts.list(params);
-}
-
-main();
+const params: WorkspaceFinancialBackendSDK.APIFinancialAccountListParams = { provider: 'teller' };
+const apiFinancialAccounts: WorkspaceFinancialBackendSDK.APIFinancialAccountListResponse =
+  await client.apiFinancialAccounts.list(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -68,21 +60,17 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const apiFinancialAccounts = await client.apiFinancialAccounts
-    .list({ provider: 'teller' })
-    .catch(async (err) => {
-      if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
-}
-
-main();
+const apiFinancialAccounts = await client.apiFinancialAccounts
+  .list({ provider: 'teller' })
+  .catch(async (err) => {
+    if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
+    }
+  });
 ```
 
 Error codes are as follows:
