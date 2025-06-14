@@ -2,7 +2,7 @@
 
 import type { WorkspaceFinancialBackendSDK } from '../client';
 
-export class APIResource {
+export abstract class APIResource {
   protected _client: WorkspaceFinancialBackendSDK;
 
   constructor(client: WorkspaceFinancialBackendSDK) {
