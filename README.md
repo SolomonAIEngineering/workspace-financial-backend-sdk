@@ -1,6 +1,6 @@
 # Workspace Financial Backend SDK TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/@solomon-ai/workspace-financial-backend-sdk.svg)](https://npmjs.org/package/@solomon-ai/workspace-financial-backend-sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@solomon-ai/workspace-financial-backend-sdk)
+[![NPM version](<https://img.shields.io/npm/v/@solomon-ai/workspace-financial-backend-sdk.svg?label=npm%20(stable)>)](https://npmjs.org/package/@solomon-ai/workspace-financial-backend-sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@solomon-ai/workspace-financial-backend-sdk)
 
 This library provides convenient access to the Workspace Financial Backend SDK REST API from server-side TypeScript or JavaScript.
 
