@@ -264,6 +264,7 @@ export class WorkspaceFinancialBackendSDK {
       timeout: this.timeout,
       logger: this.logger,
       logLevel: this.logLevel,
+      fetch: this.fetch,
       fetchOptions: this.fetchOptions,
       bearerToken: this.bearerToken,
       ...options,
