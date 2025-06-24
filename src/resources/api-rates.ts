@@ -21,7 +21,7 @@ export namespace APIRateListResponse {
   export interface Data {
     date: string;
 
-    rates: Record<string, number>;
+    rates: { [key: string]: number };
 
     source: string;
   }
