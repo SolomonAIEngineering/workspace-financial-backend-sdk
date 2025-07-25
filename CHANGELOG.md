@@ -1,5 +1,59 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-07-25)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* **api:** api update ([76eeb48](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/76eeb4869e422a9a71b905deca7fb12bcb551aba))
+* **client:** add support for endpoint-specific base URLs ([0ded9d6](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/0ded9d6881914e633176900d54900eb1baecb99a))
+* **client:** add withOptions helper ([e201dd4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/e201dd4913575df4681c6cbffa70c0d5bae71a91))
+
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([a33c85c](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/a33c85c263c27ca1e1b4d619420b9075ea1d5681))
+* **client:** always overwrite when merging headers ([da55ee7](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/da55ee77315e129b06110cd4751e9be025d68bd0))
+* **client:** explicitly copy fetch in withOptions ([7a24019](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/7a2401905f317f66d15355777cc466a33a0010e5))
+* **client:** get fetchOptions type more reliably ([1420fff](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/1420fff0cac0d3fa676583f615cb05ee30de21bf))
+* compat with more runtimes ([ffe4b50](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/ffe4b5014991ad847033662b51c3671977692f59))
+* publish script — handle NPM errors correctly ([aee7733](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/aee7733ac70dcb26e6cb3910645c8a09a8ac2c79))
+
+
+### Chores
+
+* adjust eslint.config.mjs ignore pattern ([712e34d](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/712e34de039497761a263a45bfdc8e368d87255c))
+* avoid type error in certain environments ([dec6943](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/dec69433dcdd5526dd868df6d00f45279cf0fc4c))
+* **ci:** enable for pull requests ([4168260](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/41682602037a73774d3479797184000c08bc9550))
+* **ci:** only run for pushes and fork pull requests ([a8ea83a](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/a8ea83aaf3da78f8add4f075ca86dfb2a8601f5d))
+* **client:** drop support for EOL node versions ([ec8d73f](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/ec8d73fc1d57019e353c55d37f73324c6e44d7eb))
+* **client:** improve path param validation ([9a2c00e](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/9a2c00e05b7002d219e9b2b8fc329a54e1b0b917))
+* **client:** refactor imports ([6142f50](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/6142f5008c4d1620c7318d3cdfcce903ae4713b2))
+* **deps:** bump eslint-plugin-prettier ([e1007f9](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/e1007f982bbae644ae55742770c5d699c658e354))
+* **docs:** grammar improvements ([93feda4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/93feda4d08fb9852f3e012b7f5e77f4f85924055))
+* **docs:** use top-level-await in example snippets ([2dde849](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/2dde8499cb2caf751d2c5fb4b7b905d84c4b648a))
+* improve publish-npm script --latest tag logic ([220132f](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/220132f9be95f3ddb98f22324887fcc1fd6b5d76))
+* **internal:** add pure annotations, make base APIResource abstract ([8990df1](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/8990df1ba51ef0dfc3c1031bc687a14ad5731894))
+* **internal:** codegen related update ([bbc8111](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/bbc81112daccbd4c1ba84b4d51461127815a46c0))
+* **internal:** fix readablestream types in node 20 ([88b87b4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/88b87b4734b2f5bbb4076b664d69286e44817a33))
+* **internal:** share typescript helpers ([51bc31a](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/51bc31ae9a4e1c9632248f87e86d87e277d1a072))
+* **internal:** update jest config ([d8d21a8](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/d8d21a8036ff92c10797509bd460145a216cb5e2))
+* **package:** remove engines ([a7aec73](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/a7aec73bd49dafe743fdb664bc3ee1c64febdd77))
+* **readme:** update badges ([06a5011](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/06a50119b04d35a433be1b8518f4563a1facae0c))
+* **readme:** use better example snippet for undocumented params ([ebf6c5a](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/ebf6c5a7b6dd8b88e8fd8b3b5da880308ee9ccf4))
+
+
+### Documentation
+
+* add examples to tsdocs ([d9bb514](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/d9bb514d549c033b3c11eb9a6c86a5f6aaffa973))
+* remove or fix invalid readme examples ([1bdc5d4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/1bdc5d43d7bb4c47bcd09f355f21f7673aaa26e4))
+
+
+### Refactors
+
+* **types:** replace Record with mapped types ([ef65274](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/ef65274360a1f12ef7b4f8cf099d43cc83b8287f))
+
 ## 0.1.0-alpha.3 (2025-05-01)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)

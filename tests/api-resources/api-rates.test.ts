@@ -3,7 +3,6 @@
 import WorkspaceFinancialBackendSDK from '@solomon-ai/workspace-financial-backend-sdk';
 
 const client = new WorkspaceFinancialBackendSDK({
-  bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 

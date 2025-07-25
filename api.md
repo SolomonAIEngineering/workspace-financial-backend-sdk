@@ -1,17 +1,5 @@
 # APIFinancialAccounts
 
-Types:
-
-- <code><a href="./src/resources/api-financial-accounts.ts">APIFinancialAccountListResponse</a></code>
-- <code><a href="./src/resources/api-financial-accounts.ts">APIFinancialAccountDeleteResponse</a></code>
-- <code><a href="./src/resources/api-financial-accounts.ts">APIFinancialAccountListBalancesResponse</a></code>
-
-Methods:
-
-- <code title="get /v1/api.financial.accounts">client.apiFinancialAccounts.<a href="./src/resources/api-financial-accounts.ts">list</a>({ ...params }) -> APIFinancialAccountListResponse</code>
-- <code title="delete /v1/api.financial.accounts/{id}">client.apiFinancialAccounts.<a href="./src/resources/api-financial-accounts.ts">delete</a>(id, { ...params }) -> APIFinancialAccountDeleteResponse</code>
-- <code title="get /v1/api.financial.accounts/balance">client.apiFinancialAccounts.<a href="./src/resources/api-financial-accounts.ts">listBalances</a>({ ...params }) -> APIFinancialAccountListBalancesResponse</code>
-
 # APIHealth
 
 Types:
@@ -21,21 +9,9 @@ Types:
 
 Methods:
 
-- <code title="get /v1/api.health">client.apiHealth.<a href="./src/resources/api-health.ts">check</a>() -> APIHealthCheckResponse</code>
+- <code title="get /v1/api.health">client.apiHealth.<a href="./src/resources/api-health.ts">check</a>({ ...params }) -> APIHealthCheckResponse</code>
 
 # APIApikeys
-
-Types:
-
-- <code><a href="./src/resources/api-apikeys.ts">APIKey</a></code>
-- <code><a href="./src/resources/api-apikeys.ts">APIApikeyListResponse</a></code>
-- <code><a href="./src/resources/api-apikeys.ts">APIApikeyRevokeResponse</a></code>
-
-Methods:
-
-- <code title="post /v1/api.apikeys">client.apiApikeys.<a href="./src/resources/api-apikeys.ts">create</a>({ ...params }) -> APIKey</code>
-- <code title="get /v1/api.apikeys">client.apiApikeys.<a href="./src/resources/api-apikeys.ts">list</a>({ ...params }) -> APIApikeyListResponse</code>
-- <code title="delete /v1/api.apikeys/{id}">client.apiApikeys.<a href="./src/resources/api-apikeys.ts">revoke</a>(pathID, { ...params }) -> APIApikeyRevokeResponse</code>
 
 # APIGocardless
 
@@ -74,7 +50,7 @@ Types:
 Methods:
 
 - <code title="get /v1/api.institutions">client.apiInstitutions.<a href="./src/resources/api-institutions.ts">list</a>({ ...params }) -> APIInstitutionListResponse</code>
-- <code title="put /v1/api.institutions/{id}/usage">client.apiInstitutions.<a href="./src/resources/api-institutions.ts">updateUsage</a>(id) -> APIInstitutionUpdateUsageResponse</code>
+- <code title="put /v1/api.institutions/{id}/usage">client.apiInstitutions.<a href="./src/resources/api-institutions.ts">updateUsage</a>(id, { ...params }) -> APIInstitutionUpdateUsageResponse</code>
 
 # APIRates
 
@@ -105,17 +81,3 @@ Methods:
 - <code title="get /v1/api.transactions/recurring">client.apiTransactions.<a href="./src/resources/api-transactions.ts">listRecurring</a>({ ...params }) -> APITransactionListRecurringResponse</code>
 
 # APIUsers
-
-Types:
-
-- <code><a href="./src/resources/api-users.ts">APIUserCreateResponse</a></code>
-- <code><a href="./src/resources/api-users.ts">APIUserRetrieveResponse</a></code>
-- <code><a href="./src/resources/api-users.ts">APIUserUpdateResponse</a></code>
-- <code><a href="./src/resources/api-users.ts">APIUserDeleteResponse</a></code>
-
-Methods:
-
-- <code title="post /v1/api.users">client.apiUsers.<a href="./src/resources/api-users.ts">create</a>({ ...params }) -> APIUserCreateResponse</code>
-- <code title="get /v1/api.users/{id}">client.apiUsers.<a href="./src/resources/api-users.ts">retrieve</a>(id) -> APIUserRetrieveResponse</code>
-- <code title="put /v1/api.users/{id}">client.apiUsers.<a href="./src/resources/api-users.ts">update</a>(id, { ...params }) -> APIUserUpdateResponse</code>
-- <code title="delete /v1/api.users/{id}">client.apiUsers.<a href="./src/resources/api-users.ts">delete</a>(id) -> APIUserDeleteResponse</code>

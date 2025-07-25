@@ -1,6 +1,6 @@
 # Workspace Financial Backend SDK TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/@solomon-ai/workspace-financial-backend-sdk.svg)](https://npmjs.org/package/@solomon-ai/workspace-financial-backend-sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@solomon-ai/workspace-financial-backend-sdk)
+[![NPM version](<https://img.shields.io/npm/v/@solomon-ai/workspace-financial-backend-sdk.svg?label=npm%20(stable)>)](https://npmjs.org/package/@solomon-ai/workspace-financial-backend-sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@solomon-ai/workspace-financial-backend-sdk)
 
 This library provides convenient access to the Workspace Financial Backend SDK REST API from server-side TypeScript or JavaScript.
 
@@ -23,17 +23,12 @@ The full API of this library can be found in [api.md](api.md).
 import WorkspaceFinancialBackendSDK from '@solomon-ai/workspace-financial-backend-sdk';
 
 const client = new WorkspaceFinancialBackendSDK({
-  bearerToken: process.env['WORKSPACE_FINANCIAL_BACKEND_SDK_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
 });
 
-async function main() {
-  const apiFinancialAccounts = await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' });
+const response = await client.apiHealth.check({ apiId: 'api_1234' });
 
-  console.log(apiFinancialAccounts.data);
-}
-
-main();
+console.log(response.data);
 ```
 
 ### Request & Response types
@@ -45,17 +40,11 @@ This library includes TypeScript definitions for all request params and response
 import WorkspaceFinancialBackendSDK from '@solomon-ai/workspace-financial-backend-sdk';
 
 const client = new WorkspaceFinancialBackendSDK({
-  bearerToken: process.env['WORKSPACE_FINANCIAL_BACKEND_SDK_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
 });
 
-async function main() {
-  const params: WorkspaceFinancialBackendSDK.APIFinancialAccountListParams = { provider: 'REPLACE_ME' };
-  const apiFinancialAccounts: WorkspaceFinancialBackendSDK.APIFinancialAccountListResponse =
-    await client.apiFinancialAccounts.list(params);
-}
-
-main();
+const params: WorkspaceFinancialBackendSDK.APIHealthCheckParams = { apiId: 'api_1234' };
+const response: WorkspaceFinancialBackendSDK.APIHealthCheckResponse = await client.apiHealth.check(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -68,21 +57,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const apiFinancialAccounts = await client.apiFinancialAccounts
-    .list({ provider: 'REPLACE_ME' })
-    .catch(async (err) => {
-      if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
-}
-
-main();
+const response = await client.apiHealth.check({ apiId: 'api_1234' }).catch(async (err) => {
+  if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
@@ -114,7 +97,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 // Or, configure per-request:
-await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' }, {
+await client.apiHealth.check({ apiId: 'api_1234' }, {
   maxRetries: 5,
 });
 ```
@@ -131,7 +114,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 // Override per-request:
-await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' }, {
+await client.apiHealth.check({ apiId: 'api_1234' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -154,15 +137,13 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new WorkspaceFinancialBackendSDK();
 
-const response = await client.apiFinancialAccounts.list({ provider: 'REPLACE_ME' }).asResponse();
+const response = await client.apiHealth.check({ apiId: 'api_1234' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: apiFinancialAccounts, response: raw } = await client.apiFinancialAccounts
-  .list({ provider: 'REPLACE_ME' })
-  .withResponse();
+const { data: response, response: raw } = await client.apiHealth.check({ apiId: 'api_1234' }).withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(apiFinancialAccounts.data);
+console.log(response.data);
 ```
 
 ### Logging
@@ -242,9 +223,8 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.foo.create({
-  foo: 'my_param',
-  bar: 12,
+client.apiHealth.check({
+  // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
 });
@@ -362,7 +342,7 @@ TypeScript >= 4.9 is supported.
 The following runtimes are supported:
 
 - Web browsers (Up-to-date Chrome, Firefox, Safari, Edge, and more)
-- Node.js 18 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
+- Node.js 20 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
 - Deno v1.28.0 or higher.
 - Bun 1.0 or later.
 - Cloudflare Workers.

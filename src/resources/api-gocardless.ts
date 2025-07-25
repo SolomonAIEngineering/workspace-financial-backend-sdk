@@ -7,6 +7,17 @@ import { RequestOptions } from '../internal/request-options';
 export class APIGocardless extends APIResource {
   /**
    * Agreement (GoCardLess)
+   *
+   * @example
+   * ```ts
+   * const response = await client.apiGocardless.createAgreement(
+   *   {
+   *     apiId: 'apiId',
+   *     institutionId: 'REVOLUT_REVOGB21',
+   *     transactionTotalDays: 90,
+   *   },
+   * );
+   * ```
    */
   createAgreement(
     body: APIGocardlessCreateAgreementParams,
@@ -17,6 +28,16 @@ export class APIGocardless extends APIResource {
 
   /**
    * Auth link (GoCardLess)
+   *
+   * @example
+   * ```ts
+   * const response = await client.apiGocardless.createLink({
+   *   agreement: '2dea1b84-97b0-4cb4-8805-302c227587c8',
+   *   apiId: 'apiId',
+   *   institutionId: 'REVOLUT_REVOGB21',
+   *   redirect: 'http://www.yourwebpage.com',
+   * });
+   * ```
    */
   createLink(
     body: APIGocardlessCreateLinkParams,
@@ -27,6 +48,15 @@ export class APIGocardless extends APIResource {
 
   /**
    * Exchange token (GoCardLess)
+   *
+   * @example
+   * ```ts
+   * const response = await client.apiGocardless.exchangeToken({
+   *   apiId: 'apiId',
+   *   institutionId: 'REVOLUT_REVOGB21',
+   *   transactionTotalDays: 90,
+   * });
+   * ```
    */
   exchangeToken(
     body: APIGocardlessExchangeTokenParams,
@@ -83,6 +113,8 @@ export namespace APIGocardlessExchangeTokenResponse {
 }
 
 export interface APIGocardlessCreateAgreementParams {
+  apiId: string;
+
   institutionId: string;
 
   transactionTotalDays: number;
@@ -91,12 +123,16 @@ export interface APIGocardlessCreateAgreementParams {
 export interface APIGocardlessCreateLinkParams {
   agreement: string | null;
 
+  apiId: string;
+
   institutionId: string;
 
   redirect: string;
 }
 
 export interface APIGocardlessExchangeTokenParams {
+  apiId: string;
+
   institutionId: string;
 
   transactionTotalDays: number;
