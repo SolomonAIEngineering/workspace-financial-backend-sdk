@@ -30,6 +30,11 @@ export interface APIStatementRetrievePdfParams {
    */
   accountId: string;
 
+  /**
+   * The ID of the API that the service belongs to
+   */
+  apiId: string;
+
   provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   /**

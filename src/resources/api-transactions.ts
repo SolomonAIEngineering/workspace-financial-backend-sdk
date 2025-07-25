@@ -26,6 +26,11 @@ export class APITransactions extends APIResource {
 export interface APITransactionListResponse {
   data: Array<APITransactionListResponse.Data>;
 
+  /**
+   * Connection information (included when connectionId parameter was used)
+   */
+  connection?: APITransactionListResponse.Connection;
+
   cursor?: string | null;
 
   hasMore?: boolean | null;
@@ -142,6 +147,46 @@ export namespace APITransactionListResponse {
     unofficial_currency_code?: string | null;
 
     website?: string | null;
+  }
+
+  /**
+   * Connection information (included when connectionId parameter was used)
+   */
+  export interface Connection {
+    /**
+     * Connection ID
+     */
+    id: string;
+
+    /**
+     * Connection creation timestamp
+     */
+    createdAt: string;
+
+    /**
+     * Institution ID (provider-specific)
+     */
+    institutionId: string | null;
+
+    /**
+     * Institution name
+     */
+    institutionName: string | null;
+
+    /**
+     * Last successful sync timestamp
+     */
+    lastSyncAt: string | null;
+
+    /**
+     * Financial data provider
+     */
+    provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
+
+    /**
+     * Connection status
+     */
+    status: string;
   }
 }
 
@@ -285,7 +330,10 @@ export interface APITransactionListParams {
    */
   accountId: string;
 
-  provider: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
+  /**
+   * The ID of the API that the service belongs to
+   */
+  apiId: string;
 
   /**
    * Used for Teller and Plaid
@@ -298,9 +346,16 @@ export interface APITransactionListParams {
   accountType?: 'credit' | 'depository' | 'other_asset' | 'loan' | 'other_liability';
 
   /**
+   * Connection ID to automatically derive provider context and credentials
+   */
+  connectionId?: string;
+
+  /**
    * Get latest transactions
    */
   latest?: 'true' | 'false';
+
+  provider?: 'teller' | 'plaid' | 'gocardless' | 'stripe' | 'enablebanking';
 
   syncCursor?: string | null;
 }
@@ -316,7 +371,22 @@ export interface APITransactionListRecurringParams {
    */
   accountId: string;
 
+  /**
+   * The ID of the API that the service belongs to
+   */
+  apiId: string;
+
   provider: 'plaid';
+
+  /**
+   * Team ID
+   */
+  teamId: string;
+
+  /**
+   * User ID
+   */
+  userId: string;
 }
 
 export declare namespace APITransactions {

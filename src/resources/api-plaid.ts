@@ -10,11 +10,13 @@ export class APIPlaid extends APIResource {
    *
    * @example
    * ```ts
-   * const response = await client.apiPlaid.createLink();
+   * const response = await client.apiPlaid.createLink({
+   *   apiId: 'apiId',
+   * });
    * ```
    */
   createLink(
-    body: APIPlaidCreateLinkParams | null | undefined = {},
+    body: APIPlaidCreateLinkParams,
     options?: RequestOptions,
   ): APIPromise<APIPlaidCreateLinkResponse> {
     return this._client.post('/v1/api.plaid/link', { body, ...options });
@@ -27,6 +29,7 @@ export class APIPlaid extends APIResource {
    * ```ts
    * const response = await client.apiPlaid.exchangeToken({
    *   token: 'ojwmef9823f892n9h98h2efoqed9823hdodfcoj13er92hef',
+   *   apiId: 'apiId',
    * });
    * ```
    */
@@ -63,6 +66,8 @@ export namespace APIPlaidExchangeTokenResponse {
 }
 
 export interface APIPlaidCreateLinkParams {
+  apiId: string;
+
   /**
    * Used when initiating the reconnect flow
    */
@@ -75,6 +80,12 @@ export interface APIPlaidCreateLinkParams {
 
 export interface APIPlaidExchangeTokenParams {
   token: string;
+
+  apiId: string;
+
+  connectionName?: string;
+
+  institutionName?: string;
 }
 
 export declare namespace APIPlaid {
