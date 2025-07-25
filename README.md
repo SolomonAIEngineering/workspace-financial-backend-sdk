@@ -23,13 +23,12 @@ The full API of this library can be found in [api.md](api.md).
 import WorkspaceFinancialBackendSDK from '@solomon-ai/workspace-financial-backend-sdk';
 
 const client = new WorkspaceFinancialBackendSDK({
-  bearerToken: process.env['WORKSPACE_FINANCIAL_BACKEND_SDK_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
 });
 
-const apiFinancialAccounts = await client.apiFinancialAccounts.list({ provider: 'teller' });
+const response = await client.apiHealth.check({ apiId: 'api_1234' });
 
-console.log(apiFinancialAccounts.data);
+console.log(response.data);
 ```
 
 ### Request & Response types
@@ -41,13 +40,11 @@ This library includes TypeScript definitions for all request params and response
 import WorkspaceFinancialBackendSDK from '@solomon-ai/workspace-financial-backend-sdk';
 
 const client = new WorkspaceFinancialBackendSDK({
-  bearerToken: process.env['WORKSPACE_FINANCIAL_BACKEND_SDK_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
 });
 
-const params: WorkspaceFinancialBackendSDK.APIFinancialAccountListParams = { provider: 'teller' };
-const apiFinancialAccounts: WorkspaceFinancialBackendSDK.APIFinancialAccountListResponse =
-  await client.apiFinancialAccounts.list(params);
+const params: WorkspaceFinancialBackendSDK.APIHealthCheckParams = { apiId: 'api_1234' };
+const response: WorkspaceFinancialBackendSDK.APIHealthCheckResponse = await client.apiHealth.check(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -60,17 +57,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const apiFinancialAccounts = await client.apiFinancialAccounts
-  .list({ provider: 'teller' })
-  .catch(async (err) => {
-    if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
+const response = await client.apiHealth.check({ apiId: 'api_1234' }).catch(async (err) => {
+  if (err instanceof WorkspaceFinancialBackendSDK.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
@@ -102,7 +97,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 // Or, configure per-request:
-await client.apiFinancialAccounts.list({ provider: 'teller' }, {
+await client.apiHealth.check({ apiId: 'api_1234' }, {
   maxRetries: 5,
 });
 ```
@@ -119,7 +114,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 // Override per-request:
-await client.apiFinancialAccounts.list({ provider: 'teller' }, {
+await client.apiHealth.check({ apiId: 'api_1234' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -142,15 +137,13 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new WorkspaceFinancialBackendSDK();
 
-const response = await client.apiFinancialAccounts.list({ provider: 'teller' }).asResponse();
+const response = await client.apiHealth.check({ apiId: 'api_1234' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: apiFinancialAccounts, response: raw } = await client.apiFinancialAccounts
-  .list({ provider: 'teller' })
-  .withResponse();
+const { data: response, response: raw } = await client.apiHealth.check({ apiId: 'api_1234' }).withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(apiFinancialAccounts.data);
+console.log(response.data);
 ```
 
 ### Logging
@@ -230,7 +223,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.apiFinancialAccounts.list({
+client.apiHealth.check({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',

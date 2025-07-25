@@ -1,23 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export {
-  APIApikeys,
-  type APIKey,
-  type APIApikeyListResponse,
-  type APIApikeyRevokeResponse,
-  type APIApikeyCreateParams,
-  type APIApikeyListParams,
-  type APIApikeyRevokeParams,
-} from './api-apikeys';
-export {
-  APIFinancialAccounts,
-  type APIFinancialAccountListResponse,
-  type APIFinancialAccountDeleteResponse,
-  type APIFinancialAccountListBalancesResponse,
-  type APIFinancialAccountListParams,
-  type APIFinancialAccountDeleteParams,
-  type APIFinancialAccountListBalancesParams,
-} from './api-financial-accounts';
+export { APIApikeys } from './api-apikeys';
+export { APIFinancialAccounts } from './api-financial-accounts';
 export {
   APIGocardless,
   type APIGocardlessCreateAgreementResponse,
@@ -27,13 +11,19 @@ export {
   type APIGocardlessCreateLinkParams,
   type APIGocardlessExchangeTokenParams,
 } from './api-gocardless';
-export { APIHealth, type HealthCheck, type APIHealthCheckResponse } from './api-health';
+export {
+  APIHealth,
+  type HealthCheck,
+  type APIHealthCheckResponse,
+  type APIHealthCheckParams,
+} from './api-health';
 export {
   APIInstitutions,
   type Institution,
   type APIInstitutionListResponse,
   type APIInstitutionUpdateUsageResponse,
   type APIInstitutionListParams,
+  type APIInstitutionUpdateUsageParams,
 } from './api-institutions';
 export {
   APIPlaid,
@@ -51,12 +41,4 @@ export {
   type APITransactionListParams,
   type APITransactionListRecurringParams,
 } from './api-transactions';
-export {
-  APIUsers,
-  type APIUserCreateResponse,
-  type APIUserRetrieveResponse,
-  type APIUserUpdateResponse,
-  type APIUserDeleteResponse,
-  type APIUserCreateParams,
-  type APIUserUpdateParams,
-} from './api-users';
+export { APIUsers } from './api-users';

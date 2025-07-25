@@ -3,7 +3,6 @@
 import WorkspaceFinancialBackendSDK from '@solomon-ai/workspace-financial-backend-sdk';
 
 const client = new WorkspaceFinancialBackendSDK({
-  bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
@@ -11,6 +10,7 @@ describe('resource apiGocardless', () => {
   // skipped: tests are disabled for the time being
   test.skip('createAgreement: only required params', async () => {
     const responsePromise = client.apiGocardless.createAgreement({
+      apiId: 'apiId',
       institutionId: 'REVOLUT_REVOGB21',
       transactionTotalDays: 90,
     });
@@ -26,6 +26,7 @@ describe('resource apiGocardless', () => {
   // skipped: tests are disabled for the time being
   test.skip('createAgreement: required and optional params', async () => {
     const response = await client.apiGocardless.createAgreement({
+      apiId: 'apiId',
       institutionId: 'REVOLUT_REVOGB21',
       transactionTotalDays: 90,
     });
@@ -35,6 +36,7 @@ describe('resource apiGocardless', () => {
   test.skip('createLink: only required params', async () => {
     const responsePromise = client.apiGocardless.createLink({
       agreement: '2dea1b84-97b0-4cb4-8805-302c227587c8',
+      apiId: 'apiId',
       institutionId: 'REVOLUT_REVOGB21',
       redirect: 'http://www.yourwebpage.com',
     });
@@ -51,6 +53,7 @@ describe('resource apiGocardless', () => {
   test.skip('createLink: required and optional params', async () => {
     const response = await client.apiGocardless.createLink({
       agreement: '2dea1b84-97b0-4cb4-8805-302c227587c8',
+      apiId: 'apiId',
       institutionId: 'REVOLUT_REVOGB21',
       redirect: 'http://www.yourwebpage.com',
     });
@@ -59,6 +62,7 @@ describe('resource apiGocardless', () => {
   // skipped: tests are disabled for the time being
   test.skip('exchangeToken: only required params', async () => {
     const responsePromise = client.apiGocardless.exchangeToken({
+      apiId: 'apiId',
       institutionId: 'REVOLUT_REVOGB21',
       transactionTotalDays: 90,
     });
@@ -74,6 +78,7 @@ describe('resource apiGocardless', () => {
   // skipped: tests are disabled for the time being
   test.skip('exchangeToken: required and optional params', async () => {
     const response = await client.apiGocardless.exchangeToken({
+      apiId: 'apiId',
       institutionId: 'REVOLUT_REVOGB21',
       transactionTotalDays: 90,
     });

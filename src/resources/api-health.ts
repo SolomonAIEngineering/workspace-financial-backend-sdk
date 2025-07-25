@@ -9,8 +9,8 @@ export class APIHealth extends APIResource {
   /**
    * Health Check
    */
-  check(options?: RequestOptions): APIPromise<APIHealthCheckResponse> {
-    return this._client.get('/v1/api.health', options);
+  check(query: APIHealthCheckParams, options?: RequestOptions): APIPromise<APIHealthCheckResponse> {
+    return this._client.get('/v1/api.health', { query, ...options });
   }
 }
 
@@ -42,6 +42,17 @@ export namespace APIHealthCheckResponse {
   }
 }
 
+export interface APIHealthCheckParams {
+  /**
+   * The ID of the API that the service belongs to
+   */
+  apiId: string;
+}
+
 export declare namespace APIHealth {
-  export { type HealthCheck as HealthCheck, type APIHealthCheckResponse as APIHealthCheckResponse };
+  export {
+    type HealthCheck as HealthCheck,
+    type APIHealthCheckResponse as APIHealthCheckResponse,
+    type APIHealthCheckParams as APIHealthCheckParams,
+  };
 }

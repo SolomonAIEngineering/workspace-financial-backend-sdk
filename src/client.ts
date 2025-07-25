@@ -16,24 +16,8 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import {
-  APIApikeyCreateParams,
-  APIApikeyListParams,
-  APIApikeyListResponse,
-  APIApikeyRevokeParams,
-  APIApikeyRevokeResponse,
-  APIApikeys,
-  APIKey,
-} from './resources/api-apikeys';
-import {
-  APIFinancialAccountDeleteParams,
-  APIFinancialAccountDeleteResponse,
-  APIFinancialAccountListBalancesParams,
-  APIFinancialAccountListBalancesResponse,
-  APIFinancialAccountListParams,
-  APIFinancialAccountListResponse,
-  APIFinancialAccounts,
-} from './resources/api-financial-accounts';
+import { APIApikeys } from './resources/api-apikeys';
+import { APIFinancialAccounts } from './resources/api-financial-accounts';
 import {
   APIGocardless,
   APIGocardlessCreateAgreementParams,
@@ -43,10 +27,11 @@ import {
   APIGocardlessExchangeTokenParams,
   APIGocardlessExchangeTokenResponse,
 } from './resources/api-gocardless';
-import { APIHealth, APIHealthCheckResponse, HealthCheck } from './resources/api-health';
+import { APIHealth, APIHealthCheckParams, APIHealthCheckResponse, HealthCheck } from './resources/api-health';
 import {
   APIInstitutionListParams,
   APIInstitutionListResponse,
+  APIInstitutionUpdateUsageParams,
   APIInstitutionUpdateUsageResponse,
   APIInstitutions,
   Institution,
@@ -67,15 +52,7 @@ import {
   APITransactionListResponse,
   APITransactions,
 } from './resources/api-transactions';
-import {
-  APIUserCreateParams,
-  APIUserCreateResponse,
-  APIUserDeleteResponse,
-  APIUserRetrieveResponse,
-  APIUserUpdateParams,
-  APIUserUpdateResponse,
-  APIUsers,
-} from './resources/api-users';
+import { APIUsers } from './resources/api-users';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -125,6 +102,8 @@ export interface ClientOptions {
    *
    * Note that request timeouts are retried by default, so in a worst-case scenario you may wait
    * much longer than this timeout before the promise succeeds or fails.
+   *
+   * @unit milliseconds
    */
   timeout?: number | undefined;
   /**
@@ -256,7 +235,7 @@ export class WorkspaceFinancialBackendSDK {
    * Create a new client instance re-using the same options given to the current client with optional overriding.
    */
   withOptions(options: Partial<ClientOptions>): this {
-    return new (this.constructor as any as new (props: ClientOptions) => typeof this)({
+    const client = new (this.constructor as any as new (props: ClientOptions) => typeof this)({
       ...this._options,
       environment: options.environment ? options.environment : undefined,
       baseURL: options.environment ? undefined : this.baseURL,
@@ -269,6 +248,7 @@ export class WorkspaceFinancialBackendSDK {
       bearerToken: this.bearerToken,
       ...options,
     });
+    return client;
   }
 
   /**
@@ -295,7 +275,7 @@ export class WorkspaceFinancialBackendSDK {
     );
   }
 
-  protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
+  protected async authHeaders(opts: FinalRequestOptions): Promise<NullableHeaders | undefined> {
     if (this.bearerToken == null) {
       return undefined;
     }
@@ -430,7 +410,9 @@ export class WorkspaceFinancialBackendSDK {
 
     await this.prepareOptions(options);
 
-    const { req, url, timeout } = this.buildRequest(options, { retryCount: maxRetries - retriesRemaining });
+    const { req, url, timeout } = await this.buildRequest(options, {
+      retryCount: maxRetries - retriesRemaining,
+    });
 
     await this.prepareRequest(req, { url, options });
 
@@ -508,7 +490,7 @@ export class WorkspaceFinancialBackendSDK {
     } with status ${response.status} in ${headersTime - startTime}ms`;
 
     if (!response.ok) {
-      const shouldRetry = this.shouldRetry(response);
+      const shouldRetry = await this.shouldRetry(response);
       if (retriesRemaining && shouldRetry) {
         const retryMessage = `retrying, ${retriesRemaining} attempts remaining`;
 
@@ -607,7 +589,7 @@ export class WorkspaceFinancialBackendSDK {
     }
   }
 
-  private shouldRetry(response: Response): boolean {
+  private async shouldRetry(response: Response): Promise<boolean> {
     // Note this is not a standard header.
     const shouldRetryHeader = response.headers.get('x-should-retry');
 
@@ -684,10 +666,10 @@ export class WorkspaceFinancialBackendSDK {
     return sleepSeconds * jitter * 1000;
   }
 
-  buildRequest(
+  async buildRequest(
     inputOptions: FinalRequestOptions,
     { retryCount = 0 }: { retryCount?: number } = {},
-  ): { req: FinalizedRequestInit; url: string; timeout: number } {
+  ): Promise<{ req: FinalizedRequestInit; url: string; timeout: number }> {
     const options = { ...inputOptions };
     const { method, path, query, defaultBaseURL } = options;
 
@@ -695,7 +677,7 @@ export class WorkspaceFinancialBackendSDK {
     if ('timeout' in options) validatePositiveInteger('timeout', options.timeout);
     options.timeout = options.timeout ?? this.timeout;
     const { bodyHeaders, body } = this.buildBody({ options });
-    const reqHeaders = this.buildHeaders({ options: inputOptions, method, bodyHeaders, retryCount });
+    const reqHeaders = await this.buildHeaders({ options: inputOptions, method, bodyHeaders, retryCount });
 
     const req: FinalizedRequestInit = {
       method,
@@ -711,7 +693,7 @@ export class WorkspaceFinancialBackendSDK {
     return { req, url, timeout: options.timeout };
   }
 
-  private buildHeaders({
+  private async buildHeaders({
     options,
     method,
     bodyHeaders,
@@ -721,7 +703,7 @@ export class WorkspaceFinancialBackendSDK {
     method: HTTPMethod;
     bodyHeaders: HeadersLike;
     retryCount: number;
-  }): Headers {
+  }): Promise<Headers> {
     let idempotencyHeaders: HeadersLike = {};
     if (this.idempotencyHeader && method !== 'get') {
       if (!options.idempotencyKey) options.idempotencyKey = this.defaultIdempotencyKey();
@@ -737,7 +719,7 @@ export class WorkspaceFinancialBackendSDK {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(Math.trunc(options.timeout / 1000)) } : {}),
         ...getPlatformHeaders(),
       },
-      this.authHeaders(options),
+      await this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
@@ -828,31 +810,16 @@ WorkspaceFinancialBackendSDK.APIUsers = APIUsers;
 export declare namespace WorkspaceFinancialBackendSDK {
   export type RequestOptions = Opts.RequestOptions;
 
-  export {
-    APIFinancialAccounts as APIFinancialAccounts,
-    type APIFinancialAccountListResponse as APIFinancialAccountListResponse,
-    type APIFinancialAccountDeleteResponse as APIFinancialAccountDeleteResponse,
-    type APIFinancialAccountListBalancesResponse as APIFinancialAccountListBalancesResponse,
-    type APIFinancialAccountListParams as APIFinancialAccountListParams,
-    type APIFinancialAccountDeleteParams as APIFinancialAccountDeleteParams,
-    type APIFinancialAccountListBalancesParams as APIFinancialAccountListBalancesParams,
-  };
+  export { APIFinancialAccounts as APIFinancialAccounts };
 
   export {
     APIHealth as APIHealth,
     type HealthCheck as HealthCheck,
     type APIHealthCheckResponse as APIHealthCheckResponse,
+    type APIHealthCheckParams as APIHealthCheckParams,
   };
 
-  export {
-    APIApikeys as APIApikeys,
-    type APIKey as APIKey,
-    type APIApikeyListResponse as APIApikeyListResponse,
-    type APIApikeyRevokeResponse as APIApikeyRevokeResponse,
-    type APIApikeyCreateParams as APIApikeyCreateParams,
-    type APIApikeyListParams as APIApikeyListParams,
-    type APIApikeyRevokeParams as APIApikeyRevokeParams,
-  };
+  export { APIApikeys as APIApikeys };
 
   export {
     APIGocardless as APIGocardless,
@@ -878,6 +845,7 @@ export declare namespace WorkspaceFinancialBackendSDK {
     type APIInstitutionListResponse as APIInstitutionListResponse,
     type APIInstitutionUpdateUsageResponse as APIInstitutionUpdateUsageResponse,
     type APIInstitutionListParams as APIInstitutionListParams,
+    type APIInstitutionUpdateUsageParams as APIInstitutionUpdateUsageParams,
   };
 
   export { APIRates as APIRates, type APIRateListResponse as APIRateListResponse };
@@ -895,13 +863,5 @@ export declare namespace WorkspaceFinancialBackendSDK {
     type APITransactionListRecurringParams as APITransactionListRecurringParams,
   };
 
-  export {
-    APIUsers as APIUsers,
-    type APIUserCreateResponse as APIUserCreateResponse,
-    type APIUserRetrieveResponse as APIUserRetrieveResponse,
-    type APIUserUpdateResponse as APIUserUpdateResponse,
-    type APIUserDeleteResponse as APIUserDeleteResponse,
-    type APIUserCreateParams as APIUserCreateParams,
-    type APIUserUpdateParams as APIUserUpdateParams,
-  };
+  export { APIUsers as APIUsers };
 }
