@@ -7,7 +7,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 describe('resource apiPlaid', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createLink: only required params', async () => {
     const responsePromise = client.apiPlaid.createLink({ apiId: 'apiId' });
     const rawResponse = await responsePromise.asResponse();
@@ -19,7 +19,7 @@ describe('resource apiPlaid', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createLink: required and optional params', async () => {
     const response = await client.apiPlaid.createLink({
       apiId: 'apiId',
@@ -29,7 +29,7 @@ describe('resource apiPlaid', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('exchangeToken: only required params', async () => {
     const responsePromise = client.apiPlaid.exchangeToken({
       token: 'ojwmef9823f892n9h98h2efoqed9823hdodfcoj13er92hef',
@@ -44,7 +44,7 @@ describe('resource apiPlaid', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('exchangeToken: required and optional params', async () => {
     const response = await client.apiPlaid.exchangeToken({
       token: 'ojwmef9823f892n9h98h2efoqed9823hdodfcoj13er92hef',

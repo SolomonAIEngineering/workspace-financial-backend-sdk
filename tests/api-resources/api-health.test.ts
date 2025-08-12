@@ -7,7 +7,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 describe('resource apiHealth', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('check: only required params', async () => {
     const responsePromise = client.apiHealth.check({ apiId: 'api_1234' });
     const rawResponse = await responsePromise.asResponse();
@@ -19,7 +19,7 @@ describe('resource apiHealth', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('check: required and optional params', async () => {
     const response = await client.apiHealth.check({ apiId: 'api_1234' });
   });

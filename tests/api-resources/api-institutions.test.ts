@@ -7,7 +7,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 describe('resource apiInstitutions', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.apiInstitutions.list({ apiId: 'api_1234', countryCode: 'BE' });
     const rawResponse = await responsePromise.asResponse();
@@ -19,7 +19,7 @@ describe('resource apiInstitutions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.apiInstitutions.list({
       apiId: 'api_1234',
@@ -30,7 +30,7 @@ describe('resource apiInstitutions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateUsage: only required params', async () => {
     const responsePromise = client.apiInstitutions.updateUsage('STARLING_SRLGGB3L', { apiId: 'api_1234' });
     const rawResponse = await responsePromise.asResponse();
@@ -42,7 +42,7 @@ describe('resource apiInstitutions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateUsage: required and optional params', async () => {
     const response = await client.apiInstitutions.updateUsage('STARLING_SRLGGB3L', {
       apiId: 'api_1234',
