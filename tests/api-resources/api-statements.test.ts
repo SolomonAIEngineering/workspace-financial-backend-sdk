@@ -7,8 +7,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 describe('resource apiStatements', () => {
-  // skipped: tests are disabled for the time being
-  test.skip('retrievePdf: required and optional params', async () => {
+  test('retrievePdf: required and optional params', async () => {
     const response = await client.apiStatements.retrievePdf({
       accessToken: 'access-sandbox-123456-abcdef',
       accountId: '5f7a7464d6e268055f17e3a5',
