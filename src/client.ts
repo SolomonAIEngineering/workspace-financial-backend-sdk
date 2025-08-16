@@ -797,6 +797,7 @@ export class WorkspaceFinancialBackendSDK {
   apiTransactions: API.APITransactions = new API.APITransactions(this);
   apiUsers: API.APIUsers = new API.APIUsers(this);
 }
+
 WorkspaceFinancialBackendSDK.APIFinancialAccounts = APIFinancialAccounts;
 WorkspaceFinancialBackendSDK.APIHealth = APIHealth;
 WorkspaceFinancialBackendSDK.APIApikeys = APIApikeys;
@@ -807,6 +808,7 @@ WorkspaceFinancialBackendSDK.APIRates = APIRates;
 WorkspaceFinancialBackendSDK.APIStatements = APIStatements;
 WorkspaceFinancialBackendSDK.APITransactions = APITransactions;
 WorkspaceFinancialBackendSDK.APIUsers = APIUsers;
+
 export declare namespace WorkspaceFinancialBackendSDK {
   export type RequestOptions = Opts.RequestOptions;
 
