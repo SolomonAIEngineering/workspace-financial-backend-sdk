@@ -1,6 +1,6 @@
 {
   "name": "@solomon-ai/workspace-financial-backend-sdk",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "description": "The official TypeScript library for the Workspace Financial Backend SDK API",
   "author": "Workspace Financial Backend SDK <engineering@solomon-ai.co>",
   "types": "dist/index.d.ts",
