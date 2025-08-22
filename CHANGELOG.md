@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-08-22)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **mcp:** add code execution tool ([fa420ce](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/fa420ce9a1d5b9cfd7f3230674a5b52856877c56))
+
+
+### Chores
+
+* add package to package.json ([4cbf4ea](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/4cbf4ea887dccb9df904f00d52352cee4e96f568))
+* **client:** qualify global Blob ([01453df](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/01453df4d90c409c150c40d94bb9066dc00dbd45))
+* **deps:** update dependency @types/node to v20.17.58 ([49374a7](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/49374a73289e938eaa8e7340e24ac0acb417f717))
+* **internal:** codegen related update ([e6e75ed](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/e6e75ed865a7e8f65afd41275a37d114941cd2da))
+* **internal:** codegen related update ([3677c84](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/3677c84218ad9f746b73c97b2ddda2975750fdc4))
+* **internal:** formatting change ([b310958](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/b310958b04b2df932547783e7c0f9dcb525058d6))
+
 ## 0.1.0-alpha.4 (2025-07-25)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
