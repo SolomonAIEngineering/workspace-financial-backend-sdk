@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "@solomon-ai/workspace-financial-backend-sdk/*": ["src/*"],
-      "@solomon-ai/workspace-financial-backend-sdk": ["src/index.ts"]
+      "@solomon-ai/workspace-financial-backend-sdk/*": ["./src/*"],
+      "@solomon-ai/workspace-financial-backend-sdk": ["./src/index.ts"]
     },
     "noEmit": true,
 

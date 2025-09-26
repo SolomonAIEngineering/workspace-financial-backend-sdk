@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "@solomon-ai/workspace-financial-backend-sdk/*": ["dist/src/*"],
-      "@solomon-ai/workspace-financial-backend-sdk": ["dist/src/index.ts"]
+      "@solomon-ai/workspace-financial-backend-sdk/*": ["./dist/src/*"],
+      "@solomon-ai/workspace-financial-backend-sdk": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
