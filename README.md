@@ -44,7 +44,9 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 const params: WorkspaceFinancialBackendSDK.APIHealthCheckParams = { apiId: 'api_1234' };
-const response: WorkspaceFinancialBackendSDK.APIHealthCheckResponse = await client.apiHealth.check(params);
+const response: WorkspaceFinancialBackendSDK.APIHealthCheckResponse = await client.apiHealth.check(
+  params,
+);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -141,7 +143,9 @@ const response = await client.apiHealth.check({ apiId: 'api_1234' }).asResponse(
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: response, response: raw } = await client.apiHealth.check({ apiId: 'api_1234' }).withResponse();
+const { data: response, response: raw } = await client.apiHealth
+  .check({ apiId: 'api_1234' })
+  .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(response.data);
 ```
