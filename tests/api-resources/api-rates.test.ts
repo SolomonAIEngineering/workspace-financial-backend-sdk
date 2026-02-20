@@ -8,7 +8,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 describe('resource apiRates', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.apiRates.list();
     const rawResponse = await responsePromise.asResponse();
