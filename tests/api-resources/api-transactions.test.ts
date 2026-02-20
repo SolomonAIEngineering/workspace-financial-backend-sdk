@@ -8,7 +8,7 @@ const client = new WorkspaceFinancialBackendSDK({
 });
 
 describe('resource apiTransactions', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.apiTransactions.list({ accountId: 'acct_1234567890', apiId: 'api_1234' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource apiTransactions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.apiTransactions.list({
       accountId: 'acct_1234567890',
@@ -34,7 +34,7 @@ describe('resource apiTransactions', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listRecurring: only required params', async () => {
     const responsePromise = client.apiTransactions.listRecurring({
       accessToken: 'access-token-123',
@@ -53,7 +53,7 @@ describe('resource apiTransactions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listRecurring: required and optional params', async () => {
     const response = await client.apiTransactions.listRecurring({
       accessToken: 'access-token-123',
