@@ -60,7 +60,7 @@ $ yarn link @solomon-ai/workspace-financial-backend-sdk
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @solomon-ai/workspace-financial-backend-sdk
+$ pnpm link --global @solomon-ai/workspace-financial-backend-sdk
 ```
 
 ## Running tests
