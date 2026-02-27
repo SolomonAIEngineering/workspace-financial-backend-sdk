@@ -4,6 +4,9 @@ import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * **Authentication & Authorization** - Secure API access management, token exchange, and provider connections for all banking providers
+ */
 export class APIGocardless extends APIResource {
   /**
    * Agreement (GoCardLess)

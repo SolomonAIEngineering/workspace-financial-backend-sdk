@@ -5,6 +5,9 @@ import * as APIHealthAPI from './api-health';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * **System Operations** - Health checks, API key management, financial rates, and infrastructure endpoints
+ */
 export class APIHealth extends APIResource {
   /**
    * Health Check

@@ -790,13 +790,34 @@ export class WorkspaceFinancialBackendSDK {
   static toFile = Uploads.toFile;
 
   apiFinancialAccounts: API.APIFinancialAccounts = new API.APIFinancialAccounts(this);
+  /**
+   * **System Operations** - Health checks, API key management, financial rates, and infrastructure endpoints
+   */
   apiHealth: API.APIHealth = new API.APIHealth(this);
   apiApikeys: API.APIApikeys = new API.APIApikeys(this);
+  /**
+   * **Authentication & Authorization** - Secure API access management, token exchange, and provider connections for all banking providers
+   */
   apiGocardless: API.APIGocardless = new API.APIGocardless(this);
+  /**
+   * **Authentication & Authorization** - Secure API access management, token exchange, and provider connections for all banking providers
+   */
   apiPlaid: API.APIPlaid = new API.APIPlaid(this);
+  /**
+   * **Financial Institutions** - Directory and management of supported banking providers and financial institutions
+   */
   apiInstitutions: API.APIInstitutions = new API.APIInstitutions(this);
+  /**
+   * **System Operations** - Health checks, API key management, financial rates, and infrastructure endpoints
+   */
   apiRates: API.APIRates = new API.APIRates(this);
+  /**
+   * **Transaction Data** - Transaction retrieval, analysis, and management including recurring transactions and statements
+   */
   apiStatements: API.APIStatements = new API.APIStatements(this);
+  /**
+   * **Transaction Data** - Transaction retrieval, analysis, and management including recurring transactions and statements
+   */
   apiTransactions: API.APITransactions = new API.APITransactions(this);
   apiUsers: API.APIUsers = new API.APIUsers(this);
 }

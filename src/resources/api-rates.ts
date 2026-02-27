@@ -4,6 +4,9 @@ import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * **System Operations** - Health checks, API key management, financial rates, and infrastructure endpoints
+ */
 export class APIRates extends APIResource {
   /**
    * List all financial rates

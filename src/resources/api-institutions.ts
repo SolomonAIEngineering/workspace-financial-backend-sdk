@@ -5,6 +5,9 @@ import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
+/**
+ * **Financial Institutions** - Directory and management of supported banking providers and financial institutions
+ */
 export class APIInstitutions extends APIResource {
   /**
    * List all financial institutions
