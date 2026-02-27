@@ -4,6 +4,9 @@ import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * **Transaction Data** - Transaction retrieval, analysis, and management including recurring transactions and statements
+ */
 export class APITransactions extends APIResource {
   /**
    * Get transactions for a specific account

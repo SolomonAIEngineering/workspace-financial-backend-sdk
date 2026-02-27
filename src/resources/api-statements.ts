@@ -5,6 +5,9 @@ import { APIPromise } from '../core/api-promise';
 import { buildHeaders } from '../internal/headers';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * **Transaction Data** - Transaction retrieval, analysis, and management including recurring transactions and statements
+ */
 export class APIStatements extends APIResource {
   /**
    * Get Statement PDF
