@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2026-03-20)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Chores
+
+* **internal:** tweak CI branches ([eae5dd9](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/eae5dd9b5f634413017721c7303612119b8ea36e))
+* **internal:** update dependencies to address dependabot vulnerabilities ([f3754df](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/f3754dfb9a30b3677dfa1e439f1eeadeb0e8b5be))
+
 ## 0.1.0-alpha.4 (2025-07-25)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
