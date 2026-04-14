@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2026-04-14)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **api:** api update ([b13ec6b](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/b13ec6bf8bf2b3b84d0ac6d406c18f43b30dca57))
+
+
+### Chores
+
+* **internal:** codegen related update ([ea3f5a2](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/commit/ea3f5a2d20d525c921ce3d7084fc2f92e60a075f))
+
 ## 0.1.0-alpha.4 (2025-07-25)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/SolomonAIEngineering/workspace-financial-backend-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
