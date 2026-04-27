@@ -2,6 +2,4 @@
 
 import { APIResource } from '../core/resource';
 
-export class APIFinancialAccounts extends APIResource {
-
-}
+export class APIFinancialAccounts extends APIResource {}

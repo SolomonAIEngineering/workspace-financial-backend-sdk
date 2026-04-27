@@ -13,7 +13,12 @@ export class APIStatements extends APIResource {
    * Get Statement PDF
    */
   retrievePdf(query: APIStatementRetrievePdfParams, options?: RequestOptions): APIPromise<Response> {
-    return this._client.get('/v1/api.statements/pdf', { query, ...options, headers: buildHeaders([{Accept: 'application/pdf'}, options?.headers]), __binaryResponse: true });
+    return this._client.get('/v1/api.statements/pdf', {
+      query,
+      ...options,
+      headers: buildHeaders([{ Accept: 'application/pdf' }, options?.headers]),
+      __binaryResponse: true,
+    });
   }
 }
 
@@ -52,7 +57,5 @@ export interface APIStatementRetrievePdfParams {
 }
 
 export declare namespace APIStatements {
-  export {
-    type APIStatementRetrievePdfParams as APIStatementRetrievePdfParams
-  };
+  export { type APIStatementRetrievePdfParams as APIStatementRetrievePdfParams };
 }

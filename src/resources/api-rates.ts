@@ -31,7 +31,5 @@ export namespace APIRateListResponse {
 }
 
 export declare namespace APIRates {
-  export {
-    type APIRateListResponse as APIRateListResponse
-  };
+  export { type APIRateListResponse as APIRateListResponse };
 }

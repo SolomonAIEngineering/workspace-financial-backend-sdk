@@ -56,6 +56,6 @@ export declare namespace APIHealth {
   export {
     type HealthCheck as HealthCheck,
     type APIHealthCheckResponse as APIHealthCheckResponse,
-    type APIHealthCheckParams as APIHealthCheckParams
+    type APIHealthCheckParams as APIHealthCheckParams,
   };
 }

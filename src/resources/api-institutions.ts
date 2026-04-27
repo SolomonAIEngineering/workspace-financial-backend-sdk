@@ -19,9 +19,38 @@ export class APIInstitutions extends APIResource {
   /**
    * Update the usage of a financial institution
    */
-  updateUsage(id: string, params: APIInstitutionUpdateUsageParams, options?: RequestOptions): APIPromise<APIInstitutionUpdateUsageResponse> {
-    const { apiId, cached, connectionId, costUsd, enrichmentType, modelUsed, provider, responseTimeMs, transactionCount, usageType } = params
-    return this._client.put(path`/v1/api.institutions/${id}/usage`, { query: { apiId, cached, connectionId, costUsd, enrichmentType, modelUsed, provider, responseTimeMs, transactionCount, usageType }, ...options });
+  updateUsage(
+    id: string,
+    params: APIInstitutionUpdateUsageParams,
+    options?: RequestOptions,
+  ): APIPromise<APIInstitutionUpdateUsageResponse> {
+    const {
+      apiId,
+      cached,
+      connectionId,
+      costUsd,
+      enrichmentType,
+      modelUsed,
+      provider,
+      responseTimeMs,
+      transactionCount,
+      usageType,
+    } = params;
+    return this._client.put(path`/v1/api.institutions/${id}/usage`, {
+      query: {
+        apiId,
+        cached,
+        connectionId,
+        costUsd,
+        enrichmentType,
+        modelUsed,
+        provider,
+        responseTimeMs,
+        transactionCount,
+        usageType,
+      },
+      ...options,
+    });
   }
 }
 
@@ -101,7 +130,39 @@ export interface APIInstitutionListParams {
   /**
    * Country code
    */
-  countryCode: 'AT' | 'BE' | 'BG' | 'HR' | 'CY' | 'CZ' | 'DK' | 'EE' | 'FI' | 'FR' | 'DE' | 'GR' | 'HU' | 'IS' | 'IE' | 'IT' | 'LV' | 'LI' | 'LT' | 'LU' | 'MT' | 'NL' | 'NO' | 'PL' | 'PT' | 'RO' | 'SK' | 'SI' | 'ES' | 'SE' | 'GB' | 'US';
+  countryCode:
+    | 'AT'
+    | 'BE'
+    | 'BG'
+    | 'HR'
+    | 'CY'
+    | 'CZ'
+    | 'DK'
+    | 'EE'
+    | 'FI'
+    | 'FR'
+    | 'DE'
+    | 'GR'
+    | 'HU'
+    | 'IS'
+    | 'IE'
+    | 'IT'
+    | 'LV'
+    | 'LI'
+    | 'LT'
+    | 'LU'
+    | 'MT'
+    | 'NL'
+    | 'NO'
+    | 'PL'
+    | 'PT'
+    | 'RO'
+    | 'SK'
+    | 'SI'
+    | 'ES'
+    | 'SE'
+    | 'GB'
+    | 'US';
 
   /**
    * Connection ID to filter institutions by provider (optional)
@@ -168,7 +229,22 @@ export interface APIInstitutionUpdateUsageParams {
   /**
    * The type of usage being tracked
    */
-  usageType?: 'connection_created' | 'connection_deleted' | 'transaction_fetch' | 'account_fetch' | 'statement_access' | 'balance_check' | 'auth_refresh' | 'transaction_enrichment' | 'category_prediction' | 'tax_analysis' | 'business_purpose' | 'receipt_requirement' | 'per_diem_analysis' | 'worker_classification' | 'multi_model_enrichment';
+  usageType?:
+    | 'connection_created'
+    | 'connection_deleted'
+    | 'transaction_fetch'
+    | 'account_fetch'
+    | 'statement_access'
+    | 'balance_check'
+    | 'auth_refresh'
+    | 'transaction_enrichment'
+    | 'category_prediction'
+    | 'tax_analysis'
+    | 'business_purpose'
+    | 'receipt_requirement'
+    | 'per_diem_analysis'
+    | 'worker_classification'
+    | 'multi_model_enrichment';
 }
 
 export declare namespace APIInstitutions {
@@ -177,6 +253,6 @@ export declare namespace APIInstitutions {
     type APIInstitutionListResponse as APIInstitutionListResponse,
     type APIInstitutionUpdateUsageResponse as APIInstitutionUpdateUsageResponse,
     type APIInstitutionListParams as APIInstitutionListParams,
-    type APIInstitutionUpdateUsageParams as APIInstitutionUpdateUsageParams
+    type APIInstitutionUpdateUsageParams as APIInstitutionUpdateUsageParams,
   };
 }

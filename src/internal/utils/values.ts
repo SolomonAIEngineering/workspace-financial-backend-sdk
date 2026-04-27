@@ -39,7 +39,9 @@ export function isObj(obj: unknown): obj is Record<string, unknown> {
 
 export const ensurePresent = <T>(value: T | null | undefined): T => {
   if (value == null) {
-    throw new WorkspaceFinancialBackendSDKError(`Expected a value to be given but received ${value} instead.`);
+    throw new WorkspaceFinancialBackendSDKError(
+      `Expected a value to be given but received ${value} instead.`,
+    );
   }
 
   return value;
@@ -59,14 +61,18 @@ export const coerceInteger = (value: unknown): number => {
   if (typeof value === 'number') return Math.round(value);
   if (typeof value === 'string') return parseInt(value, 10);
 
-  throw new WorkspaceFinancialBackendSDKError(`Could not coerce ${value} (type: ${typeof value}) into a number`);
+  throw new WorkspaceFinancialBackendSDKError(
+    `Could not coerce ${value} (type: ${typeof value}) into a number`,
+  );
 };
 
 export const coerceFloat = (value: unknown): number => {
   if (typeof value === 'number') return value;
   if (typeof value === 'string') return parseFloat(value);
 
-  throw new WorkspaceFinancialBackendSDKError(`Could not coerce ${value} (type: ${typeof value}) into a number`);
+  throw new WorkspaceFinancialBackendSDKError(
+    `Could not coerce ${value} (type: ${typeof value}) into a number`,
+  );
 };
 
 export const coerceBoolean = (value: unknown): boolean => {

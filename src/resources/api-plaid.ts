@@ -18,7 +18,10 @@ export class APIPlaid extends APIResource {
    * });
    * ```
    */
-  createLink(body: APIPlaidCreateLinkParams, options?: RequestOptions): APIPromise<APIPlaidCreateLinkResponse> {
+  createLink(
+    body: APIPlaidCreateLinkParams,
+    options?: RequestOptions,
+  ): APIPromise<APIPlaidCreateLinkResponse> {
     return this._client.post('/v1/api.plaid/link', { body, ...options });
   }
 
@@ -33,7 +36,10 @@ export class APIPlaid extends APIResource {
    * });
    * ```
    */
-  exchangeToken(body: APIPlaidExchangeTokenParams, options?: RequestOptions): APIPromise<APIPlaidExchangeTokenResponse> {
+  exchangeToken(
+    body: APIPlaidExchangeTokenParams,
+    options?: RequestOptions,
+  ): APIPromise<APIPlaidExchangeTokenResponse> {
     return this._client.post('/v1/api.plaid/exchange', { body, ...options });
   }
 }
@@ -90,6 +96,6 @@ export declare namespace APIPlaid {
     type APIPlaidCreateLinkResponse as APIPlaidCreateLinkResponse,
     type APIPlaidExchangeTokenResponse as APIPlaidExchangeTokenResponse,
     type APIPlaidCreateLinkParams as APIPlaidCreateLinkParams,
-    type APIPlaidExchangeTokenParams as APIPlaidExchangeTokenParams
+    type APIPlaidExchangeTokenParams as APIPlaidExchangeTokenParams,
   };
 }

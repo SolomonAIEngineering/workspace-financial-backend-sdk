@@ -18,7 +18,10 @@ export class APITransactions extends APIResource {
   /**
    * Get recurring transactions
    */
-  listRecurring(query: APITransactionListRecurringParams, options?: RequestOptions): APIPromise<APITransactionListRecurringResponse> {
+  listRecurring(
+    query: APITransactionListRecurringParams,
+    options?: RequestOptions,
+  ): APIPromise<APITransactionListRecurringResponse> {
     return this._client.get('/v1/api.transactions/recurring', { query, ...options });
   }
 }
@@ -394,6 +397,6 @@ export declare namespace APITransactions {
     type APITransactionListResponse as APITransactionListResponse,
     type APITransactionListRecurringResponse as APITransactionListRecurringResponse,
     type APITransactionListParams as APITransactionListParams,
-    type APITransactionListRecurringParams as APITransactionListRecurringParams
+    type APITransactionListRecurringParams as APITransactionListRecurringParams,
   };
 }

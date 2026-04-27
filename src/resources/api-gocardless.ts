@@ -22,7 +22,10 @@ export class APIGocardless extends APIResource {
    * );
    * ```
    */
-  createAgreement(body: APIGocardlessCreateAgreementParams, options?: RequestOptions): APIPromise<APIGocardlessCreateAgreementResponse> {
+  createAgreement(
+    body: APIGocardlessCreateAgreementParams,
+    options?: RequestOptions,
+  ): APIPromise<APIGocardlessCreateAgreementResponse> {
     return this._client.post('/v1/api.gocardless/agreement', { body, ...options });
   }
 
@@ -39,7 +42,10 @@ export class APIGocardless extends APIResource {
    * });
    * ```
    */
-  createLink(body: APIGocardlessCreateLinkParams, options?: RequestOptions): APIPromise<APIGocardlessCreateLinkResponse> {
+  createLink(
+    body: APIGocardlessCreateLinkParams,
+    options?: RequestOptions,
+  ): APIPromise<APIGocardlessCreateLinkResponse> {
     return this._client.post('/v1/api.gocardless/link', { body, ...options });
   }
 
@@ -55,7 +61,10 @@ export class APIGocardless extends APIResource {
    * });
    * ```
    */
-  exchangeToken(body: APIGocardlessExchangeTokenParams, options?: RequestOptions): APIPromise<APIGocardlessExchangeTokenResponse> {
+  exchangeToken(
+    body: APIGocardlessExchangeTokenParams,
+    options?: RequestOptions,
+  ): APIPromise<APIGocardlessExchangeTokenResponse> {
     return this._client.post('/v1/api.gocardless/exchange', { body, ...options });
   }
 }
@@ -139,6 +148,6 @@ export declare namespace APIGocardless {
     type APIGocardlessExchangeTokenResponse as APIGocardlessExchangeTokenResponse,
     type APIGocardlessCreateAgreementParams as APIGocardlessCreateAgreementParams,
     type APIGocardlessCreateLinkParams as APIGocardlessCreateLinkParams,
-    type APIGocardlessExchangeTokenParams as APIGocardlessExchangeTokenParams
+    type APIGocardlessExchangeTokenParams as APIGocardlessExchangeTokenParams,
   };
 }
