@@ -1,7 +1,6 @@
 import fs from 'fs';
 import type { ResponseLike } from '@solomon-ai/workspace-financial-backend-sdk/internal/to-file';
 import { toFile } from '@solomon-ai/workspace-financial-backend-sdk/core/uploads';
-import { File } from 'node:buffer';
 
 class MyClass {
   name: string = 'foo';
